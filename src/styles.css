@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import 'primeicons/primeicons.css';
+
+
+:root,
+[data-bs-theme=light] {
+  --bs-primary: #0d6efd;
+}
+
+.header-lg {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.mt-15 {
+    margin-top: 15rem !important;
+}
+
+.backButton {
+    background-color: #DDDDDE;
+    border: none;
+    margin: 0px 7px;
+    border-radius: 8px;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px;
+}
+.btn-check[_ngcontent-ng-c740165440]:checked + .btn.btn-primary[_ngcontent-ng-c740165440], .btn-check[_ngcontent-ng-c740165440]:active + .btn.btn-primary[_ngcontent-ng-c740165440], .btn.btn-primary[_ngcontent-ng-c740165440]:focus:not(.btn-active), .btn.btn-primary[_ngcontent-ng-c740165440]:hover:not(.btn-active), .btn.btn-primary[_ngcontent-ng-c740165440]:active:not(.btn-active), .btn.btn-primary.active[_ngcontent-ng-c740165440], .btn.btn-primary.show[_ngcontent-ng-c740165440], .show[_ngcontent-ng-c740165440] > .btn.btn-primary[_ngcontent-ng-c740165440]{
+    background-color: var(--bs-primary) !important; 
+}
+.table-btn{
+    background-color: var(--bs-primary) !important; 
+}

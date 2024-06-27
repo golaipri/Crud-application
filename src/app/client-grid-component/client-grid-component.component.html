@@ -1,0 +1,97 @@
+<p-table id="clientGrid" #dt [columns]="gridColumnValue" [value]="gridDataTableValue" [(selection)]="selectedRowData"
+    [dataKey]="dataKey" styleClass="p-datatable-customers" [paginator]="isPagination" responsiveLayout="scroll"
+    rowHover="true" [scrollable]="isScroll" scrollDirection="horizontal" [scrollHeight]="scrollHeight"
+    [tableStyle]="{'min-width': scrollWidth }" [rowsPerPageOptions]="[5, 10, 20, 30, 50]" [rows]="numberOfRows">
+    <ng-template pTemplate="caption">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="input-group gap-4">
+                    <span class="p-input-icon-left col">
+                        <i class="pi pi-search"></i>
+                        <input name="filterText" class="table-form-control m-input" type="text"
+                            [(ngModel)]="inputGlobalSearchString"
+                            (keyup.enter)="globalSearch(inputGlobalSearchString)" />
+
+                    </span>
+                    <button *ngIf="clearButton == true" name="Search" class="btn btn-primary" (click)="clearSearch()">
+                        <span class="d-none d-sm-inline-block">
+                            {{ clearButtonName }}
+                        </span>
+                    </button>
+                    <button *ngIf="gridCreateButton" name="Create" class="table-btn btn btn-primary buttonSpace"
+                        (click)="create()" [disabled]="isCreateDisable">
+                        {{ createButtonName }}
+                        <i class="la la-plus fs-1" pTooltip="{{ createButtonName }}"></i>
+                    </button>
+                    <button *ngIf="gridViewButton" name="View" [disabled]="isViewDisable"
+                        class="table-btn btn btn-primary buttonSpace" (click)="view(selectedRowData)">
+                        {{ viewButtonName }}
+                        <i class="la la-eye fs-1" pTooltip="{{ viewButtonName }}"></i>
+                    </button>
+
+                    <button *ngIf="gridEditButton" name="Edit" [disabled]="isEditDisable"
+                        class="table-btn btn btn-primary buttonSpace" (click)="Edit(selectedRowData)">
+                        {{ editButtonName }}
+                        <i class="la la-edit fs-1" pTooltip="{{ editButtonName }}"></i>
+                    </button>
+                    <button *ngIf="gridDeleteButton" name="Delete" class="table-btn btn btn-primary buttonSpace"
+                        (click)="delete(selectedRowData)" [disabled]="isDeleteDisable">
+                        {{ deleteButtonName }}
+                        <i class="la la-trash fs-1" pTooltip="{{ deleteButtonName }}"></i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns let-index="rowIndex">
+        <tr>
+            <th style="width: 30px !important; cursor: pointer">
+
+            </th>
+
+            <th [pSortableColumn]="gridTableHeader.field" [ngClass]="{
+                    'text-right': gridTableHeader.textAlign === 'right',
+                    'text-left': gridTableHeader.textAlign === 'left',
+                    'text-center': gridTableHeader.textAlign === 'center'
+                }" *ngFor="let gridTableHeader of columns" [ngStyle]="{
+                    width:
+                        gridTableHeader.field == gridTableHeader.field ? gridTableHeader.width : gridTableHeader.width
+                }" [pSortableColumn]="gridTableHeader.field">
+                {{ gridTableHeader.header }}
+                <p-sortIcon [field]="gridTableHeader.field" ariaLabel="Activate to sort" class="float-right"
+                    ariaLabelDesc="Activate to sort in descending order"
+                    ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns" let-index="rowIndex">
+        <tr [pSelectableRow]="columns" [pSelectableRowIndex]="index" (click)="selectData($event, rowData)"
+            [ngClass]="{'rowBackgroundColor': rowData == selectedRowData}">
+            <td style="width: 30px !important">
+                <p-tableRadioButton *ngIf="showRadioButton" [value]="rowData"
+                    (click)="selectData($event, rowData)"></p-tableRadioButton>
+                <p-tableRadioButton *ngIf="showDisableRadioButton"></p-tableRadioButton>
+                <input type="checkbox" *ngIf="showCheckBoxButton" class="showCheckBoxButton" name="showCheckBoxButton"
+                    (click)="selectCheckBox($event, rowData, index)" />
+            </td>
+            <td *ngFor="let col of columns" [ngClass]="{
+                    'text-right': col.textAlign === 'right',
+                    'text-left': col.textAlign === 'left',
+                    'text-center': col.textAlign === 'center'
+                }" [ngStyle]="{ width: col.width }">
+                <span *ngIf="col.isNumber">
+                    <label *ngIf="col.field == 'value'">
+                        {{rowData[col.field]}}
+                    </label>
+
+                </span>
+                <label *ngIf="col.type != 'date' && rowData[col.field] != 'Total' && !col.isNumber"
+                    [style.font-weight]="gridDataTableValue.length - 1 == index && col.isBold ? 'bold' : 'normal'">
+                    {{rowData[col.field]}}
+                </label>
+
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

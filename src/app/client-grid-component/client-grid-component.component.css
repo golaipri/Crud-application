@@ -1,0 +1,169 @@
+.pagination {
+    float: right;
+}
+
+.buy {
+    background-color: var(--bs-app-color-success);
+    border: none !important;
+    font-size: 12px;
+    padding: 2px 8px !important;
+    border-radius: 4px;
+}
+
+
+.green-text {
+    color: var(--bs-app-color-success) !important;
+}
+
+.red-text {
+    color: var(--bs-app-color-danger) !important;
+}
+
+.sell {
+    background-color: var(--bs-app-color-danger);
+    border: none;
+    font-size: 12px;
+    padding: 2px 8px !important;
+    border-radius: 4px;
+}
+
+.switch {
+    background-color: var(--bs-app-color-blue);
+    font-size: 12px;
+    padding: 2px 8px !important;
+    border-radius: 4px;
+}
+
+.buyText {
+    color: var(--bs-app-color-success) !important;
+}
+
+.sellText {
+    color: var(--bs-app-color-danger) !important;
+}
+
+.switchText {
+    color: var(--bs-app-color-blue) !important;
+}
+
+.buttonSpace {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.kb-row {
+    background-color: rgba(0, 0, 0, .15) !important;
+}
+
+input.showCheckBoxButton {
+    width: 20px;
+    height: 20px;
+}
+
+.summeryPosition {
+    float: right;
+}
+
+.remove {
+    background-color: #fff;
+    border: none;
+}
+
+.p-multiselect-panel .p-multiselect-header .p-multiselect-filter-container .p-multiselect-filter-icon {
+    display: none !important;
+}
+
+.p-datatable .p-datatable-thead>tr>th {
+    border-width: 0 1px 1px 0 !important;
+}
+
+.p-datatable .p-datatable-tbody>tr>td {
+    border-width: 0 1px 1px 0 !important;
+}
+
+.p-input-icon-left>i,
+.p-input-icon-left>.p-icon-wrapper,
+.p-input-icon-right>i,
+.p-input-icon-right>.p-icon-wrapper {
+    top: 50% !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.float-right {
+    float: right;
+}
+
+.table-form-control,
+.form-select,
+.p-inputtext {
+    padding: 0.8rem 2rem !important;
+    font-size: 1.15rem !important;
+    border-radius: 4px !important;
+}
+
+.table-form-control {
+    display: block;
+    width: 100%;
+    padding: 0.775rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--bs-gray-700);
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: 1px solid var(--bs-gray-300);
+    appearance: none;
+    border-radius: 0.475rem;
+    box-shadow: false;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+
+.table-btn>i {
+    padding: unset !important;
+}
+
+.btn.btn-primary:hover:not(.btn-active) {
+    background-color: #d7d7d7 !important;
+}
+
+#clientGrid .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    border-bottom: 2px solid #d7d7d7 !important;
+    background: unset !important;
+}
+
+#clientgrid button.p-ripple.p-element.p-paginator-page.p-paginator-element.p-link.p-highlight {
+    border-bottom: 2px solid #d7d7d7 !important;
+    background: unset !important;
+}
+
+.btn-check:checked+.btn.btn-primary,
+.btn-check:active+.btn.btn-primary,
+.btn.btn-primary:focus:not(.btn-active),
+.btn.btn-primary:hover:not(.btn-active),
+.btn.btn-primary:active:not(.btn-active),
+.btn.btn-primary.active,
+.btn.btn-primary.show,
+.show>.btn.btn-primary {
+    background-color: var(--bs-primary) !important;
+}
+
+
+.fs-1{
+font-size: 1.5rem !important;
+}
+.table-btn{
+    background-color: var(--bs-primary);
+}
